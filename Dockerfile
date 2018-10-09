@@ -1,8 +1,11 @@
 FROM python:3
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR /app
 
-ADD main.py /
+COPY . /app
 
-CMD [ "python", "./main.py" ]
+RUN pip install --no-cache-dir -r app/requirements.txt
+
+ADD app/main.py /
+
+CMD [ "python", "app/main.py" ]

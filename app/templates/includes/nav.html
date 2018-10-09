@@ -1,0 +1,10 @@
+<div class="bg-white box-shadow">
+  <nav class="navbar navbar-light border-bottom bg-light">
+      <h5 class="navbar-brand float-left">GIT Reader</h5>
+        {% if not g.user %}
+          <button class="btn" data-toggle="modal" data-target="#login-modal">Log In / Register</button>
+        {% else %}
+          <a class="p-2 text-dark" href="/logout">Logout</a>
+        {% endif %}
+    </nav>
+</div>
